@@ -1,0 +1,4 @@
+config ZMK_JITTER_FILTER
+	bool "Enable jitter filter"
+	default y
+	depends on ZMK_POINTING

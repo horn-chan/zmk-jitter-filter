@@ -1,0 +1,28 @@
+description: ZMK Input Processor for Jitter Filtering
+
+compatible: "zmk,input-processor-jitter-filter"
+
+include: ip_zero_param.yaml
+
+properties:
+  threshold:
+    type: int
+    default: 50
+    description: "モーションを開始するまでの累積ピクセル閾値（正の整数）"
+
+  timeout-ms:
+    type: int
+    default: 1000
+    description: "移動がない場合に累積値をリセットするタイムアウト（ミリ秒）"
+
+  reset-on-key:
+    type: boolean
+    description: "有効にすると、キー入力があった際にジターフィルターを即座にリセットします"
+
+  ignore-after-key-ms:
+    type: int
+    description: "キー入力後にトラックボールの相対移動を無視する時間（ミリ秒）"
+
+  reset-on-key-before-threshold:
+    type: boolean
+    description: "しきい値を超える前にキー入力があった場合、累積移動量をリセットする"
